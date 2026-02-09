@@ -20,7 +20,7 @@ cores_ids <- setNames(rep("black", length(todos_ids)), todos_ids)
 
 grid.col <- c(cores_ids, cores_genes)
 
-svg("meu_circosplot.svg", width = 25, height = 25)
+svg("renal540_circosplot.svg", width = 25, height = 25)
 circos.clear()
 chordDiagram(links,
              directional = 1,
@@ -39,7 +39,7 @@ circos.trackPlotRegion(track.index = 1, panel.fun = function(x, y) {
 
 dev.off()
 
-tiff(filename = "circosplot.tif",width = 12000,height = 12000,
+tiff(filename = "circosplot_renal540.tif",width = 12000,height = 12000,
      compression = "lzw",
      res = 600)
 circos.clear()

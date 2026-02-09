@@ -30,7 +30,7 @@ gmt_files <- list.files("genesets/", pattern = "\\.gmt$", full.names = TRUE)
 gmt_data <- map(gmt_files, read_clean_gmt) %>% flatten()  # Combina todos os GMTs em uma única lista
 
 
-renal_genes <- clipr::read_clip() # Ler os genes!
+renal_genes <- read_lines(file = "genes_renal540.txt")
 
 renal_genes <- toupper(renal_genes)
 
@@ -47,5 +47,5 @@ resultado_renal <- enricher(
 tictoc::toc()
 
 writexl::write_xlsx(x = resultado_renal@result,
-                    path = "ora_resultado_renal_diseases.xlsx")
+                    path = "ora_resultado_renal540_diseases.xlsx")
 
